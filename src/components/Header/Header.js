@@ -1,6 +1,6 @@
 //import { Button } from 'bootstrap';
 import React from 'react';
-import { Button, Container, Form, FormControl, Nav, Navbar } from 'react-bootstrap';
+import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap';
 import logo from '../../logo.png'
 
 

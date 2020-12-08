@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Container, Nav, Row } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import logo from '../../../logo.png'
 
 const TopFooter = () => {

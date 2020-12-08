@@ -1,13 +1,13 @@
 import React from 'react';
-import { Card, Col, Row, CardColumns } from 'react-bootstrap';
+import { Card, Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCoffee, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 
 const BlogDetails = (props) => {
     const {image, name, description} = props.blog;
     return (
 
-                <Card className="md-3" style={{ width: '30%', height : '500px', padding : '9px', border : 'none' }}>
+                <Card className="md-3 mt-3" style={{ width: '30%', height : '500px', padding : '9px', border : 'none' }}>
                     <Card.Img height="250" variant="top" src={image} />
                     <Card.Body>
                         <Row>

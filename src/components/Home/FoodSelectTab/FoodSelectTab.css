@@ -2,7 +2,7 @@
     margin-top: 30px;
 }
 .food-selector nav{
-    padding-left: 40% !important;
+    padding-left: 38% !important;
     border: none !important;
 }
 .food-selector nav a{
@@ -10,6 +10,6 @@
     border: none !important;
 
 }
-.food-selector nav:active a{
+.nav a.active{
     border-bottom: 4px solid pink !important;
 }

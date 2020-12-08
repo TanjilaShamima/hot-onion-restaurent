@@ -9,6 +9,7 @@ import Header from './components/Header/Header';
 import LogIn from './components/LogIn/LogIn';
 import HomeIndex from './components/Home/HomeIndex/HomeIndex';
 import FooterIndex from './components/Footer/FooterIndex/FooterIndex';
+import SingelFoodPage from './components/SingelFoodPage/SingelFoodPage';
 
 
 
@@ -21,8 +22,14 @@ function App() {
           <Route exact path="/">
             <HomeIndex></HomeIndex>
           </Route>
+          <Route path="/home">
+            <HomeIndex></HomeIndex>
+          </Route>
           <Route path="/login">
             <LogIn></LogIn>
+          </Route>
+          <Route path="/food/:foodId">
+            <SingelFoodPage></SingelFoodPage>
           </Route>
           
         </Switch>
