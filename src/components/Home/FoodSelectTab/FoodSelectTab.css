@@ -1,0 +1,15 @@
+.food-selector{
+    margin-top: 30px;
+}
+.food-selector nav{
+    padding-left: 40% !important;
+    border: none !important;
+}
+.food-selector nav a{
+
+    border: none !important;
+
+}
+.food-selector nav:active a{
+    border-bottom: 4px solid pink !important;
+}
