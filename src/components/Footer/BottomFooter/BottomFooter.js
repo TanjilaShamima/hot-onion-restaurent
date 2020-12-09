@@ -6,7 +6,7 @@ const BottomFooter = () => {
         <Container>
             <Row>
                 <Col md="8" sm="12">
-                    <p><small>Copyright@tanjilashamima</small></p>
+                    <p><small>Copyright @ tanjilashamima</small></p>
                 </Col>
                 <Col md="4" sm="12">
                 <Navbar>
