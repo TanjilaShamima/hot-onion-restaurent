@@ -1,6 +1,6 @@
 .search-field{
     height: 520px;
-    background-image: url('../../../bannerbackground.png');
+    background : url('../../../bannerbackground.png') fixed;
     background-size : cover;
     background-position: center center;
     background-position: center;
