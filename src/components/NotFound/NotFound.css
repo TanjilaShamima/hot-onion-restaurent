@@ -1,0 +1,8 @@
+.not-found{
+    height: 520px;
+    background-image: url('../../bannerbackground.png');
+    background-size : cover;
+    background-position: center center;
+    background-position: center;
+
+}

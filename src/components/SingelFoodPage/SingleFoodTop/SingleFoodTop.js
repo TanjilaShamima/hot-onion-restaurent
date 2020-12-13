@@ -1,15 +1,11 @@
 import React, { useState } from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
-import { useParams } from 'react-router-dom';
-import { fakeFoodIteams } from '../../fakeData/fakeFoodIteams';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus,faShoppingCart } from '@fortawesome/free-solid-svg-icons';
-import FoodIteam from '../Home/FoodIteam/FoodIteam';
 
-const SingelFoodPage = () => {
+const SingleFoodTop = (props) => {
     const [productQuantity, setProductQuantity] = useState(1);
-    // const [food, setFood] = useState([]);
-    const {foodId} = useParams();
+    const {selectedFood} = props;
 
     const handleMinus = () => {
         if(productQuantity>1){
@@ -19,22 +15,9 @@ const SingelFoodPage = () => {
     const handleAddProductToCart = () => {
 
     }
-
-    // useEffect(() => {
-    //     setFood(fakeFoodIteams)
-    // }, [])
-
-    const selectedFood = fakeFoodIteams.find(item => item.foodId == foodId);
-    
-
-    const remainingFood = fakeFoodIteams.filter(food => food.category === selectedFood.category && food.foodId != foodId);
-    console.log(remainingFood);
-
-
-
+    // console.log(selectedFood)
     
     return (
-        <Container style={{marginTop: '40px', overflow : 'hidden'}}>
             <Row>
                 <Col>
                     <div className="mt-2 text-center">
@@ -61,18 +44,8 @@ const SingelFoodPage = () => {
                     </Row>
                 </Col>
             </Row>
-            <div style={{marginTop : '100px'}}>
-                <h3 variant="xxLarge" className="text-center">Product in Same Category</h3>
-                <div className="d-flex flex-wrap justify-content-around mt-3 mb-3">
-                    
-                    {
-                        remainingFood && remainingFood.map(food => <FoodIteam key={food.foodId} food={food}></FoodIteam>)
-                    }
-
-                </div>
-            </div>
-        </Container>
+            
     );
 };
 
-export default SingelFoodPage;
+export default SingleFoodTop;

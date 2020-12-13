@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Container, Tab, Tabs } from 'react-bootstrap';
+import { Container, Tab, Tabs, Button } from 'react-bootstrap';
 import { fakeFoodIteams } from '../../../fakeData/fakeFoodIteams';
 import FoodIteam from '../FoodIteam/FoodIteam';
 import './FoodSelectTab.css'
@@ -47,7 +47,10 @@ const FoodSelectTab = () => {
                     
                 </Tab>
             </Tabs>
-
+            <div className="text-center">
+                <Button variant="secondary" disabled>Checkout Your Food</Button> 
+            </div>
+                      
             
         </Container>
     );

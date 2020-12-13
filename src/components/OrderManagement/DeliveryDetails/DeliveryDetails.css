@@ -1,0 +1,23 @@
+.delivery-form{
+
+    width : 90%;
+    /* margin : 20px auto; */
+    
+}
+.delivery-form textarea {
+    margin : 10px 0px;
+    padding :15px;
+    border : none;
+    background-color : #8080802b;
+}
+.delivery-form input{
+    margin : 10px 0px;
+    padding :15px;
+    border : none;
+    background-color : #8080802b;
+}
+.delivery-form span{
+    color : red;
+}
+
+

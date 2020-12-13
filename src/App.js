@@ -6,11 +6,15 @@ import {
   Link
 } from "react-router-dom";
 import Header from './components/Header/Header';
-import LogIn from './components/LogIn/LogIn';
 import HomeIndex from './components/Home/HomeIndex/HomeIndex';
 import FooterIndex from './components/Footer/FooterIndex/FooterIndex';
-import SingelFoodPage from './components/SingelFoodPage/SingelFoodPage';
-
+import SingleFoodIndex from './components/SingelFoodPage/SingleFoodIndex/SingleFoodIndex';
+import FoodSelectTab from './components/Home/FoodSelectTab/FoodSelectTab';
+import LogIn from './components/Shared/LogIn/LogIn';
+import Register from './components/Shared/Register/Register';
+import OrderManagementIndex from './components/OrderManagement/OrderManagementIndex/OrderManagementIndex';
+import OrderPlaced from './components/OrderPlaced/OrderPlaced';
+import NotFound from './components/NotFound/NotFound';
 
 
 function App() {
@@ -28,8 +32,26 @@ function App() {
           <Route path="/login">
             <LogIn></LogIn>
           </Route>
+          <Route path="/signup">
+            <Register></Register>
+          </Route>         
           <Route path="/food/:foodId">
-            <SingelFoodPage></SingelFoodPage>
+            <SingleFoodIndex></SingleFoodIndex>
+          </Route>
+
+          <Route path="/food">
+            <FoodSelectTab></FoodSelectTab>
+          </Route>
+          <Route path="/order-manage">
+            <OrderManagementIndex></OrderManagementIndex>
+          </Route>
+
+          <Route path="/order-placed">
+            <OrderPlaced></OrderPlaced>
+          </Route>
+
+          <Route path="*">
+            <NotFound></NotFound>
           </Route>
           
         </Switch>

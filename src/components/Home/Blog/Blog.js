@@ -24,7 +24,7 @@ const Blog = () => {
         }
     ]
     return (
-        <Container style={{marginBottom : '20px'}}>
+        <Container style={{marginBottom : '20px', marginTop : '50px'}}>
             <h1 className="text-center">Why you choose Us</h1>
             <p  className="text-center"><small>Barton Waited twenty always repair in which we do. An delighted offending curiosity my is dashwoods at. Boy prosperious increasing surrounded
             </small></p>
