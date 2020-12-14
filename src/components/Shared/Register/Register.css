@@ -1,6 +1,6 @@
 
 .register{
-    height: 520px;
+    height: 540px;
     background-image: url('../../../bannerbackground.png');
     background-size : cover;
     background-position: center center;
@@ -16,5 +16,6 @@
 .register-form input{
     padding :10px;
     border : none;
+    margin : 10px 0px;
     background-color : #8080802b;
 }

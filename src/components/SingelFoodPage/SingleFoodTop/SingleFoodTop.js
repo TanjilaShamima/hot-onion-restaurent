@@ -3,20 +3,19 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus,faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 
+
 const SingleFoodTop = (props) => {
     const [productQuantity, setProductQuantity] = useState(1);
-    const {selectedFood} = props;
+    const {selectedFood, addToCart} = props;
+    //console.log(selectedFood)
 
     const handleMinus = () => {
         if(productQuantity>1){
             setProductQuantity(productQuantity-1);
         }
     }
-    const handleAddProductToCart = () => {
 
-    }
-    // console.log(selectedFood)
-    
+
     return (
             <Row>
                 <Col>
@@ -40,12 +39,16 @@ const SingleFoodTop = (props) => {
                     <br/>
                     
                     <Row>
-                        <Button onClick={handleAddProductToCart} className="rounded-pill mt-3 mb-3" variant="danger"><FontAwesomeIcon icon={faShoppingCart} /> Add To Cart</Button>
+                        <Button onClick={()=> addToCart(selectedFood)} className="rounded-pill mt-3 mb-3" variant="danger"><FontAwesomeIcon icon={faShoppingCart} /> Add To Cart</Button>
                     </Row>
                 </Col>
             </Row>
             
     );
 };
+
+
+
+
 
 export default SingleFoodTop;

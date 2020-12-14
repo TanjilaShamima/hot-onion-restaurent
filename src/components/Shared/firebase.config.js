@@ -1,4 +1,4 @@
-const firebaseConfig = {
+export const firebaseConfig = {
     apiKey: "AIzaSyAwynnHpNfMr-eGnFrIBNjHrfHOA7mH_CE",
     authDomain: "onion-restaurent.firebaseapp.com",
     projectId: "onion-restaurent",

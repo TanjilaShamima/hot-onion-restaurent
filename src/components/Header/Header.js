@@ -5,9 +5,17 @@ import { Link } from 'react-router-dom';
 import logo from '../../logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+import { connect } from 'react-redux';
+import { addUserDetails } from '../../Redux/actions/restaurentManageAction';
 
 
-const Header = () => {
+const Header = (props) => {
+    const {cart, user, addUserDetails} = props;
+
+     console.log(cart)
+    const handleLogOut = () => {
+        addUserDetails([]);
+    }
     return (
         <Container>
             <Navbar>
@@ -19,9 +27,21 @@ const Header = () => {
                     <Link style={{padding: '0px 5px'}} to="/food">Food</Link>
                 </Nav>
                 <Form inline>
-                    <Button variant="link"><FontAwesomeIcon className="bg-light text-danger" icon={faShoppingCart} /></Button>
-                    <Button style={{color:'black'}} variant="link"><Link to="/login">Login</Link></Button>
-                    <Button style={{borderRadius:'20px'}} variant="danger"><Link className="text-light" to="/signup">Sign Up</Link></Button>
+                    <Button variant="link"><FontAwesomeIcon className="bg-light text-danger" icon={faShoppingCart} />{cart.length}</Button>
+
+                    {user.email?
+                    <>
+                        <h6>{user.displayName}</h6>
+                        <Button onClick={handleLogOut}  style={{color:'black'}} variant="link">LogOut</Button>
+                    </>
+                    
+                    : 
+                    
+                    <>
+                        <Button style={{color:'black'}} variant="link"><Link to="/login">Login</Link></Button>
+
+                        <Button style={{borderRadius:'20px'}} variant="danger"><Link className="text-light" to="/signup">Sign Up</Link></Button>
+                    </>}
                 </Form>
             </Navbar>
             
@@ -29,4 +49,15 @@ const Header = () => {
     );
 };
 
-export default Header;
+const mapStateToProps = (state) =>{
+    return{
+        user : state.user,
+        cart : state.cart
+    }
+}
+
+const mapDispatchToProps = {
+    addUserDetails : addUserDetails
+}
+
+export default connect(mapStateToProps,mapDispatchToProps)(Header);

@@ -6,7 +6,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const SingleFoodBottom = (props) => {
-    console.log(props.food);
+    // console.log(props.food);
     const settings = {
         dots: true,
         infinite: true,

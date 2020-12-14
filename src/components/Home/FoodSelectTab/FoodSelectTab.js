@@ -46,12 +46,7 @@ const FoodSelectTab = () => {
                     </div>
                     
                 </Tab>
-            </Tabs>
-            <div className="text-center">
-                <Button variant="secondary" disabled>Checkout Your Food</Button> 
-            </div>
-                      
-            
+            </Tabs>           
         </Container>
     );
 };

@@ -5,7 +5,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Header from './components/Header/Header';
+
 import HomeIndex from './components/Home/HomeIndex/HomeIndex';
 import FooterIndex from './components/Footer/FooterIndex/FooterIndex';
 import SingleFoodIndex from './components/SingelFoodPage/SingleFoodIndex/SingleFoodIndex';
@@ -15,6 +15,8 @@ import Register from './components/Shared/Register/Register';
 import OrderManagementIndex from './components/OrderManagement/OrderManagementIndex/OrderManagementIndex';
 import OrderPlaced from './components/OrderPlaced/OrderPlaced';
 import NotFound from './components/NotFound/NotFound';
+import Header from './components/Header/Header';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 
 function App() {
@@ -42,18 +44,17 @@ function App() {
           <Route path="/food">
             <FoodSelectTab></FoodSelectTab>
           </Route>
-          <Route path="/order-manage">
+          <PrivateRoute path="/order-manage">
             <OrderManagementIndex></OrderManagementIndex>
-          </Route>
+          </PrivateRoute>
 
-          <Route path="/order-placed">
+          <PrivateRoute path="/order-placed">
             <OrderPlaced></OrderPlaced>
-          </Route>
-
+          </PrivateRoute>
+                  
           <Route path="*">
             <NotFound></NotFound>
-          </Route>
-          
+          </Route>        
         </Switch>
         <FooterIndex></FooterIndex>
       </Router>

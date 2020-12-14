@@ -12,7 +12,9 @@ const DeliveryItems = () => {
     // console.log(orderItems);
     return (
         <section className="float-right" style={{width : '80%'}}>
-            <p>From <strong>Best Onion Pizza House</strong> <br/>Arriving in 20-30 minutes <br/>107 Rd No 8</p>
+            <p>From <strong>Best Onion Pizza House</strong> 
+            <br/>Arriving in 20-30 minutes 
+            <br/>107 Rd No 8</p>
             <div>
                 {
                     orderItems.map(orderItem => <OrderItems key={orderItem.foodId} orderItem={orderItem}></OrderItems>)
