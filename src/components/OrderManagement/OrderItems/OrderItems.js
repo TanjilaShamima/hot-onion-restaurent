@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Col, Row, Image, Form } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons';
 
-const OrderItems = ({orderItem}) => {
-    const{foodId, name, price, image} = orderItem;
+const OrderItems = ({orderItem, addToCart}) => {
+    const{foodId, name, price, image, quantity} = orderItem;
     
     return (
         <section style={{backgroundColor : '#8080802b', width : '100%', display : 'block'}} className="my-2 rounded">
@@ -17,12 +17,10 @@ const OrderItems = ({orderItem}) => {
                     <h5 className="text-danger">${price}</h5>
                     <p className="text-muted"><small>Delivery Charge Free</small></p>
                 </Col>
-                <Col md={4} className="d-flex justify-content-around ">
-                    <FontAwesomeIcon  icon={faMinus}/>
-                    
-                    <Form.Control  className="text-center font-weight-bold" value="1" />
-                   
-                    <FontAwesomeIcon className="text-danger" icon={faPlus}></FontAwesomeIcon>
+                <Col md={3} className="d-flex align-content-right justify-content-around border rounded-pill">
+                    <FontAwesomeIcon style={{marginTop : '10px'}} onClick={() => addToCart({...orderItem, quantity: -1})} icon={faMinus} />
+                    <h4 variant="xxLarge">{quantity}</h4>
+                    <FontAwesomeIcon style={{marginTop : '10px'}} onClick={() => addToCart({...orderItem, quantity: 1})} icon={faPlus} className="text-danger" />
                 </Col>
             </Row>
         </section>

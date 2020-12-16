@@ -1,7 +1,7 @@
 //import { Button } from 'bootstrap';
 import React from 'react';
 import { Button, Container, Form, Nav, Navbar } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import logo from '../../logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
@@ -10,11 +10,18 @@ import { addUserDetails } from '../../Redux/actions/restaurentManageAction';
 
 
 const Header = (props) => {
+    const history = useHistory();
     const {cart, user, addUserDetails} = props;
 
-     console.log(cart)
+    //console.log(cart);
+
     const handleLogOut = () => {
         addUserDetails([]);
+    }
+
+
+    const handleCart = () => {
+        history.push('/order-manage');
     }
     return (
         <Container>
@@ -27,7 +34,7 @@ const Header = (props) => {
                     <Link style={{padding: '0px 5px'}} to="/food">Food</Link>
                 </Nav>
                 <Form inline>
-                    <Button variant="link"><FontAwesomeIcon className="bg-light text-danger" icon={faShoppingCart} />{cart.length}</Button>
+                    <Button onClick={handleCart} variant="link"><FontAwesomeIcon className="bg-light text-danger" icon={faShoppingCart} />{cart.length}</Button>
 
                     {user.email?
                     <>

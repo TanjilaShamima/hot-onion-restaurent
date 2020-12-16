@@ -3,6 +3,7 @@ import { Col, Container, Row, Button } from 'react-bootstrap';
 import orderPlacedImage from '../../Image/Group 1151.png';
 import deliveryBoy from '../../Image/Group 1152.png';
 
+
 const OrderPlaced = () => {
     return (
         <Container>
@@ -56,5 +57,6 @@ const OrderPlaced = () => {
         </Container>
     );
 };
+
 
 export default OrderPlaced;

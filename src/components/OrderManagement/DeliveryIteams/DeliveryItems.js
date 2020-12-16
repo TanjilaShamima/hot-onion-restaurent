@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
 import { fakeFoodIteams } from '../../../fakeData/fakeFoodIteams';
+import { addToCart } from '../../../Redux/actions/restaurentManageAction';
 import OrderItemCart from '../OrderItemCart/OrderItemCart';
 import OrderItems from '../OrderItems/OrderItems';
 
-const DeliveryItems = () => {
-    const [orderItems, setOrderItems] = useState([]);
-
-    useEffect(() => {
-        setOrderItems(fakeFoodIteams.splice(0,2));
-    }, []);
-    // console.log(orderItems);
+const DeliveryItems = ({cart, addToCart}) => {
+ 
+    
+    console.log(cart);
     return (
         <section className="float-right" style={{width : '80%'}}>
             <p>From <strong>Best Onion Pizza House</strong> 
@@ -17,7 +16,7 @@ const DeliveryItems = () => {
             <br/>107 Rd No 8</p>
             <div>
                 {
-                    orderItems.map(orderItem => <OrderItems key={orderItem.foodId} orderItem={orderItem}></OrderItems>)
+                    cart.map(orderItem => <OrderItems addToCart={addToCart} key={orderItem.foodId} orderItem={orderItem}></OrderItems>)
                 }
                 
             </div>
@@ -28,4 +27,16 @@ const DeliveryItems = () => {
     );
 };
 
-export default DeliveryItems;
+const mapStateToProps = state =>{
+    return {
+        cart: state.cart
+    }
+}
+
+const mapDispatchToProps = {
+    addToCart : addToCart
+}
+
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(DeliveryItems);

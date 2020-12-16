@@ -15,6 +15,13 @@ const SingleFoodTop = (props) => {
         }
     }
 
+    const handleAddToCart = () => {
+        const addedFood = selectedFood;
+        addedFood.quantity = productQuantity;
+        addToCart(addedFood);
+        setProductQuantity(1);
+    }
+
 
     return (
             <Row>
@@ -23,6 +30,7 @@ const SingleFoodTop = (props) => {
                         <img width={400} src={selectedFood.image} alt=""/>
                     </div>
                 </Col>
+
                 <Col className="d-flex  align-content-center flex-wrap">
                     <h2 variant="xxLarge">{selectedFood.name}</h2>
                     <p className="text-muted mt-3">{selectedFood.big_description}</p>
@@ -39,7 +47,9 @@ const SingleFoodTop = (props) => {
                     <br/>
                     
                     <Row>
-                        <Button onClick={()=> addToCart(selectedFood)} className="rounded-pill mt-3 mb-3" variant="danger"><FontAwesomeIcon icon={faShoppingCart} /> Add To Cart</Button>
+                        <Button onClick={handleAddToCart} className="rounded-pill mt-3 mb-3" variant="danger">
+                        
+                        <FontAwesomeIcon icon={faShoppingCart} /> Add To Cart</Button>
                     </Row>
                 </Col>
             </Row>

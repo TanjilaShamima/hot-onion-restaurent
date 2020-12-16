@@ -1,11 +1,18 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
+import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
+import { addToCart, emptyCart } from '../../../Redux/actions/restaurentManageAction';
 import './DeliveryDetails.css'
 
 
 const DeliveryDetails = () => {
+    const history = useHistory();
     const { register, handleSubmit, errors } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        history.push('/order-placed');
+        
+    }
     return (
         <div>
             <h6>Edit Delivery Details</h6>
@@ -31,5 +38,17 @@ const DeliveryDetails = () => {
         </div>
     );
 };
+// const mapStateToProps = state =>{
+//     return{
+//         cart : state.cart
+//     }
+// }
+
+// const mapDispatchToProps = {
+//     emptyCart : emptyCart
+// }
+
+
+
 
 export default DeliveryDetails;
